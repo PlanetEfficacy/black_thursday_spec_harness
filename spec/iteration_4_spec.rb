@@ -93,12 +93,12 @@ RSpec.describe "Iteration 4" do
       expect(expected.map(&:id).include?(263524984)).to eq true
       expect(expected.map(&:name).include?("Adult Princess Leia Hat")).to eq true
       expect(expected.first.class).to eq Item
-
+      # Item with id 263524984 is not tagged with merchant id 12334189 in the items.csv file.
       merchant_id = 12334768
       expected = sales_analyst.most_sold_item_for_merchant(merchant_id)
 
       expect(expected.map(&:id).include?(263549386)).to eq true
-
+      # Item with id 263549386 is not tagged with merchant id 12334768 in the items.csv file.
       merchant_id = 12337105
       expected = sales_analyst.most_sold_item_for_merchant(merchant_id)
 
